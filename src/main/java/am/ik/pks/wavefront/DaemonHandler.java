@@ -34,6 +34,7 @@ public class DaemonHandler {
 	public RouterFunction<ServerResponse> routes() {
 		return RouterFunctions.route() //
 				.POST("/daemon/{agentId}/pushdata/{workUnitId}", this::pushData) //
+				.POST("/api/v2/wfproxy/report", this::pushData) //
 				.POST("/daemon/{agentId}/checkin", this::dummy) //
 				.POST("/daemon/{agentId}/config/processed", this::dummy) //
 				.POST("/daemon/{agentId}/error", this::dummy) //
